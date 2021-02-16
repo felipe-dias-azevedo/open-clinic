@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+html, body {
+  color: #181818;
+  background: #f0f0f0;
+  
+  /* text-shadow: 0 0 3px rgba(0, 0, 0, 0.1); */
+}
+
+body, input, button, textarea {
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 36px 0 0 24px;
+  height: 40px;
+}
+
+.content-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 24px 36px 24px;
+  width: 100%;
+  height: 60px;
+}
+
+footer .left-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+footer .right-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+
+footer button {
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-top: 1em;
+  background-color: #fff;
+  /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
+  border: 3px solid #000;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  min-width: 30px;
+  padding: 4px 15px;
+  text-align: center;
+  white-space: nowrap;
+  outline: 0;
+}
+
+footer button:hover,
+footer button:focus {
+  border-color: #c0c0c0;
+}
+
+footer button:active {
+  border-color: #549ae0;
+}
+
+.row {
+  margin: 12px; 
+}
+
+input[type=password] {
+  letter-spacing: 4px;
+}
+
+.title-input {
+  font-size: 1em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 12px;
+}
+  
+.text-input {
+  letter-spacing: 1px;
+  border-radius: 8px;
+  text-align: start;
+  border: 3px black solid;
+  padding: 6px 12px;
+  margin: 8px;
+  width: 350px;
+  outline: none;
+}
+
+.text-input:hover {
+  border-color: #c0c0c0;
+}
+
+.text-input:focus {
+  border-color: #168bff;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-weight: 300;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-size: 1.05em;
+  font-weight: 300;
+}
