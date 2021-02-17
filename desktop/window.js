@@ -82,14 +82,53 @@ function loadLogin() {
 }
 
 function loadUsers() {
-    document.getElementById("main-app").innerHTML = `<header>
-    <h2 class="header-text">Select a User:</h2>
-    </header>
-    <div class="content-app">
+    var data_users = []
+    var data_users = [
+        {name: "Felipe Azevedo"},
+        {name: "Mariana Azevedo"},
+        {name: "Mayara Fernandes"}
+    ]
 
+    function createUser(name) {
+        return `<div class="user">
+        <section class="user-left">
+            <h3>${name}</h3>
+        </section>
+        <section class="user-right">
+            <button class="button user-button">Update</button>
+            <button class="button user-button button-delete">Delete</button>
+        </section>
+        </div>`;
+    };
+
+    if (data_users.length >= 1) {
+        var output_users = "";
+        for (let i = 0; i < data_users.length; i++) {
+            output_users += createUser(data_users[i].name)
+        }
+    } else {
+        output_users = "<h1>No User Inserted</h1>"
+    }
+
+    document.getElementById("main-app").innerHTML = `<header>
+        <section class="header-user-left">
+            <h2 class="header-text">Select a User:</h2>
+        </section>
+        <section class="header-user-right">
+            <button>Insert User</button>
+        </section>
+    </header>
+    <div class="content-user">
+        ${output_users}
     </div>
     <footer>
-        <button id="btnLogout">Log Out</button>
+        <section class="left-footer">
+            <button class="button" id="btnLogout">Log Out</button>
+        </section>
+        <section class="right-footer">
+            <button class="button" id="btnRefresh">Refresh</button>
+            <!-- <button id="btnDelete">Delete User</button> -->
+        </section>
     </footer>`;
     document.querySelector('#btnLogout').addEventListener('click', () => {
         changeScreen(1);

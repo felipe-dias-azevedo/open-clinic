@@ -25,20 +25,25 @@ body, input, button, textarea {
   text-align: center;
   font-weight: 300;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 .container {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 36px 0 0 24px;
-  height: 40px;
+  padding: 36px 24px 0 24px;
+  height: 60px;
+  width: 100%;
 }
 
 .content-app {
@@ -46,7 +51,9 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 174px);
+  overflow-y: auto;
+  margin: 22px;
 }
 
 footer {
@@ -55,7 +62,7 @@ footer {
   align-items: center;
   padding: 0 24px 36px 24px;
   width: 100%;
-  height: 60px;
+  height: 70px;
 }
 
 footer .left-footer {
@@ -72,12 +79,14 @@ footer .right-footer {
   width: 50%;
 }
 
+header section button,
 footer button {
   letter-spacing: 0.5px;
   text-decoration: none;
   font-size: 1.05em;
   line-height: 1.6;
-  margin-top: 1em;
+  margin-left: 8px;
+  margin-right: 8px;
   background-color: #fff;
   /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
   border: 3px solid #000;
@@ -92,13 +101,19 @@ footer button {
   outline: 0;
 }
 
+header section button:hover,
+header section button:focus,
 footer button:hover,
-footer button:focus {
+footer button:focus,
+.button:hover,
+.button:focus {
   border-color: #c0c0c0;
 }
 
-footer button:active {
-  border-color: #549ae0;
+header section button:active,
+footer button:active,
+.button:active {
+  border-color: #168bff;
 }
 
 .row {
