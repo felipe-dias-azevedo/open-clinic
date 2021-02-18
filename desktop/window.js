@@ -1,3 +1,5 @@
+var ipc = require('electron').ipcRenderer;
+const { dialog } = require('electron')
 
 // function changeScreen() {
 //     // window.close()
@@ -89,10 +91,11 @@ function loadUsers() {
         {name: "Mayara Fernandes"}
     ]
 
-    function createUser(name) {
+    function createUser(name, id) {
         return `<div class="user">
         <section class="user-left">
             <h3>${name}</h3>
+            <p class="id-hidden">${id}</p>
         </section>
         <section class="user-right">
             <button class="button user-button">Update</button>
@@ -104,7 +107,7 @@ function loadUsers() {
     if (data_users.length >= 1) {
         var output_users = "";
         for (let i = 0; i < data_users.length; i++) {
-            output_users += createUser(data_users[i].name)
+            output_users += createUser(data_users[i].name, i);
         }
     } else {
         output_users = "<h1>No User Inserted</h1>"
@@ -112,7 +115,7 @@ function loadUsers() {
 
     document.getElementById("main-app").innerHTML = `<header>
         <section class="header-user-left">
-            <h2 class="header-text">Select a User:</h2>
+            <h1 class="header-text">Select a User:</h1>
         </section>
         <section class="header-user-right">
             <button>Insert User</button>
@@ -132,7 +135,8 @@ function loadUsers() {
     </footer>`;
     document.querySelector('#btnLogout').addEventListener('click', () => {
         changeScreen(1);
-    })
+    });
+    getUserByClick();
 }
 
 function loadInsert() {
@@ -142,3 +146,22 @@ function loadInsert() {
 function loadUpdate() {
     document.getElementById("main-app").innerHTML = "";
 }
+
+function getUserByClick() {
+    var buttons = document.getElementsByClassName('button-delete');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', () => {
+            ipc.once('actionReply', function(event, response){
+                processResponse(response);
+            })
+            ipc.send('invokeAction', buttons[i].parentElement.parentElement.firstElementChild.lastElementChild.textContent);
+        });
+    }
+}
+
+// document.getElementById('btnLogin').addEventListener('click', function(){
+//     ipc.once('actionReply', function(event, response){
+//         processResponse(response);
+//     })
+//     ipc.send('invokeAction', 1);
+// });

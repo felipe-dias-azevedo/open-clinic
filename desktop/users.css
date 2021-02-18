@@ -94,3 +94,7 @@
 .button-delete:active {
     border-color: #ff0000;
 }
+
+.id-hidden {
+    display: none;
+}

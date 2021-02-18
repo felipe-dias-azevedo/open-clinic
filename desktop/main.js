@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, dialog } = require('electron')
+var ipc = require('electron').ipcMain;
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -10,6 +11,18 @@ function createWindow () {
   })
 
   win.loadFile('index.html')
+}
+
+function createMessage() {
+  const resp = dialog.showMessageBox(null, {
+    type: 'question',
+    buttons: ['No', 'Yes'],
+    defaultId: 2,
+    title: '',
+    message: 'Are you sure of the data Selected?',
+    detail: 'Users CAN NOT be recovered after being deleted.'
+  });
+  return resp
 }
 
 app.whenReady().then(createWindow)
@@ -25,3 +38,17 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+
+ipc.on('invokeAction', function(event, data){
+    // var result = processData(data);
+    createMessage().then(result => {
+      const answ = result.response;
+      console.log(answ, data);
+      if (answ == 1) {
+        // CONFIRM DELETE
+        
+      }
+    });
+    // event.sender.send('actionReply', result);
+});
