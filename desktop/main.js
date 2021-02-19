@@ -40,7 +40,7 @@ app.on('activate', () => {
 })
 
 
-ipc.on('invokeAction', function(event, data){
+ipc.on('invokeDeleteDialog', function(event, data){
     // var result = processData(data);
     createMessage().then(result => {
       const answ = result.response;
@@ -51,4 +51,17 @@ ipc.on('invokeAction', function(event, data){
       }
     });
     // event.sender.send('actionReply', result);
+});
+
+ipc.on('invokeConfirm', function(event, data){
+  // var result = processData(data);
+  createMessage().then(result => {
+    const answ = result.response;
+    console.log(answ, data.name, data.lastname);
+    if (answ == 1) {
+      // CONFIRM DELETE
+      
+    }
+  });
+  // event.sender.send('actionReply', result);
 });

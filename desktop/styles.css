@@ -28,6 +28,40 @@ body, input, button, textarea {
   font-family: 'Rubik', sans-serif;
 }
 
+h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-weight: 400;
+}
+
+input {
+  font-weight: 400;
+}
+
+a, button {
+  cursor: pointer;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-size: 1.05em;
+  font-weight: 300;
+}
+
 .container {
   height: 100%;
   width: 100%;
@@ -149,33 +183,4 @@ input[type=password] {
 
 .text-input:focus {
   border-color: #168bff;
-}
-
-h1 {
-  font-size: 1.8em;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 1.6em;
-  font-weight: 400;
-}
-
-h3 {
-  font-size: 1.4em;
-  font-weight: 300;
-}
-
-a, button {
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-p {
-  font-size: 1.05em;
-  font-weight: 300;
 }

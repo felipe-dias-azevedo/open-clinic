@@ -1,32 +1,39 @@
 # open-clinic
 Open Source Clinic System focused on Management of Patients
+
 ## Architecture
 * Node.JS -> Server
 * Python GTK+ -> Linux Client
 * ??? -> Web Client
-* ??? -> Windows Client
-* ??? -> MacOS Client
+* ElectronJS -> Windows, MacOS, Linux (Secondary) Client
+
 ## Run
 ### Server
+
 ```cd server/```
 
 ```npm i```
 
 ```npm start```
-### Linux Client
+
+### GTK3+ Linux Client
+
 ```cd linux/```
 
 ```pip install -r requirements.txt```
 
 ```python3 start.py```
+
 ### Web Client
 TBD
 
-### Windows Client
-TBD
+### ElectronJS Desktop Client (Windows, Mac, Linux)
 
-### MacOS Client
-TBD
+```cd desktop/```
+
+```npm i```
+
+```npm start```
 
 ## Examples
 TBD

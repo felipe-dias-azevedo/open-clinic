@@ -56,7 +56,7 @@ class WindowOne(Gtk.Window):
         self.entry_password.set_text("")
         box_input2.pack_start(self.entry_password, False, False, 0)
 
-        self.button_close = Gtk.Button(label="Cancel")
+        self.button_close = Gtk.Button(label="Close")
         self.button_close.connect("clicked", self.on_close_clicked)
         hbox2.pack_start(self.button_close, False, False, 0)
 
