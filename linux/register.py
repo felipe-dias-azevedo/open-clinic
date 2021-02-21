@@ -109,21 +109,21 @@ class Register(Gtk.Window):
         self.progressbar.set_text("Register Progress Completed: " + str(self.progress_bar_percent * 100) + "%")
 
     def on_entry_name_changed(self, entry):
-        if len(entry.get_text()) >= 1 and not self.name_entry_text:
+        if len(entry.get_text()) >= 2 and not self.name_entry_text:
             self.name_entry_text = True
             self.progress_bar_percent += 0.5
             self.update_progressbar_percent()
-        elif len(entry.get_text()) < 1:
+        elif len(entry.get_text()) < 2:
             self.name_entry_text = False
             self.progress_bar_percent -= 0.5
             self.update_progressbar_percent()
 
     def on_entry_lastname_changed(self, entry):
-        if len(entry.get_text()) >= 1 and not self.lastname_entry_text:
+        if len(entry.get_text()) >= 2 and not self.lastname_entry_text:
             self.lastname_entry_text = True
             self.progress_bar_percent += 0.5
             self.update_progressbar_percent()
-        elif len(entry.get_text()) < 1:
+        elif len(entry.get_text()) < 2:
             self.lastname_entry_text = False
             self.progress_bar_percent -= 0.5
             self.update_progressbar_percent()
@@ -146,7 +146,7 @@ class Register(Gtk.Window):
     def on_confirm(self, widget):
         text_firstname = self.entry_name.get_text()
         text_lastname = self.entry_lastname.get_text()
-        if len(text_firstname) < 2 or len(text_lastname) < 2:
+        if len(text_firstname) < 3 or len(text_lastname) < 3:
             dialog = Gtk.MessageDialog(
                 transient_for=self,
                 flags=0,

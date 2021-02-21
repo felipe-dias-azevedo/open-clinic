@@ -72,6 +72,7 @@ footer button,
   text-align: center;
   white-space: nowrap;
   outline: 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 header section button:hover,
@@ -114,6 +115,7 @@ input[type=password] {
   margin: 8px;
   width: 350px;
   outline: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .text-input:hover {

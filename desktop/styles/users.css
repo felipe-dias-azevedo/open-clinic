@@ -1,13 +1,17 @@
 .header-user-left {
-    width: 50%;
+    width: 65%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
+.header-user-left h1 p {
+    font-size: 24px;
+}
+
 .header-user-right {
-    width: 50%;
+    width: 35%;
     height: 100%;
     display: flex;
     justify-content: flex-end;
@@ -37,6 +41,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
 .user-left {
@@ -95,6 +101,6 @@
     border-color: #ff0000;
 }
 
-.id-hidden {
+.hidden {
     display: none;
 }

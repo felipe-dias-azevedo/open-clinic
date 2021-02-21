@@ -2,7 +2,7 @@
   "name": "open-clinic",
   "version": "1.0.0",
   "description": "Open Clinic",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"

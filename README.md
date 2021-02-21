@@ -2,10 +2,10 @@
 Open Source Clinic System focused on Management of Patients
 
 ## Architecture
-* Node.JS -> Server
-* Python GTK+ -> Linux Client
-* ??? -> Web Client
-* ElectronJS -> Windows, MacOS, Linux (Secondary) Client
+* Node.JS       -> Server
+* Python GTK+   -> Linux Client
+* ???           -> Web Client
+* ElectronJS    -> Windows, MacOS, Linux (Secondary) Client
 
 ## Run
 ### Server
