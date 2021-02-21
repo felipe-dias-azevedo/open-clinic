@@ -1,19 +1,5 @@
 var ipc = require('electron').ipcRenderer;
 
-// function changeScreen() {
-//     // window.close()
-//     const win_users = new BrowserWindow({
-//         width: 800,
-//         height: 600,
-//         parent: win,
-//         webPreferences: {
-//             nodeIntegration: true
-//         }
-//     })
-//     win_users.show()
-//     win_users.loadFile('users.html')
-// }
-
 function changeScreen(screen, insert=true, arguments_update={}) {
     switch (screen) {
         case 1:
@@ -134,7 +120,7 @@ function loadUsers() {
     document.querySelector('#btnLogout').addEventListener('click', () => {
         changeScreen(1);
     });
-    defineDeleteButtonWithDialog();
+    defineDeleteButtonWithDialog(data_users);
     defineUpdateButtons(data_users);
 }
 
@@ -197,14 +183,57 @@ function loadInsertUpdate(insert, update_arg) {
     defineConfirmButtonToRegister();
 }
 
-function defineDeleteButtonWithDialog() {
+function showModal(data_users, data_user) {
+    let id_user = data_user.id;
+
+    // document.getElementsByClassName('button-delete')[id_button];
+    var main_app = document.getElementById("main-app");
+    main_app.innerHTML =
+        `<div id="modal">
+            <div id="main-modal" class="animate">
+                <div id="head-modal">
+                    <h2 id="title-modal">Are you sure of the data Selected?</h2>
+                    <p id="text-modal">Users CAN NOT be recovered after being deleted.</p>
+                </div>
+                <div id="foot-modal">
+                    <button class="button no-button">No</button>
+                    <button class="button yes-button" autofocus>Yes</button>
+                </div>
+            </div>
+        </div>`
+    + main_app.innerHTML;
+    
+    function closeModal() {
+        document.getElementById("modal").remove();
+        document.querySelector('#btnRegister').addEventListener('click', () => {
+            changeScreen(3);
+        });
+        document.querySelector('#btnLogout').addEventListener('click', () => {
+            changeScreen(1);
+        });
+        defineDeleteButtonWithDialog(data_users);
+        defineUpdateButtons(data_users);
+    }
+
+    document.getElementsByClassName('no-button')[0].addEventListener('click', () => {
+        // document.getElementById("main-app").classList.add()
+        closeModal();
+    });
+    document.getElementsByClassName('yes-button')[0].addEventListener('click', () => {
+        console.log("DELETE ID: " + id_user);
+        closeModal();
+    });
+}
+
+function defineDeleteButtonWithDialog(data_users) {
     var buttons = document.getElementsByClassName('button-delete');
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', () => {
-            ipc.once('actionReply', function(event, response){
-                processResponse(response);
-            })
-            ipc.send('invokeDeleteDialog', buttons[i].parentElement.parentElement.firstElementChild.lastElementChild.textContent);
+            // ipc.once('actionReply', function(event, response){
+            //     processResponse(response);
+            // })
+            // ipc.send('invokeDeleteDialog', buttons[i].parentElement.parentElement.firstElementChild.lastElementChild.textContent);
+            showModal(data_users, data_users[i]);
         });
     }
 }
@@ -232,10 +261,3 @@ function defineConfirmButtonToRegister() {
         ipc.send('invokeConfirm', data);
     });
 }
-
-// document.getElementById('btnLogin').addEventListener('click', function(){
-//     ipc.once('actionReply', function(event, response){
-//         processResponse(response);
-//     })
-//     ipc.send('invokeAction', 1);
-// });

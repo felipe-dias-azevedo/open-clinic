@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <title>Open Clinic</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/modal.css">
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/users.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/users.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container" id="main-app">
+        <div id="modal">
+            <div id="main-modal" class="animate">
+                <div id="head-modal">
+                    <h2 id="title-modal">Are you sure of the data Selected?</h2>
+                    <p id="text-modal">Users CAN NOT be recovered after being deleted.</p>
+                </div>
+                <div id="foot-modal">
+                    <button class="button">No</button>
+                    <button class="button yes-button" autofocus>Yes</button>
+                </div>
+            </div>
+        </div>
         <header>
             <h1 class="header-text">Login</h1>
         </header>
@@ -45,4 +57,4 @@
     </div>
 </body>
 </html>
-<script src="./window.js" charset="utf-8"></script>
+<script src="../window.js" charset="utf-8"></script>
