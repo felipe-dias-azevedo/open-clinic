@@ -11,17 +11,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/users', (req, res) => {
-    try {
-        const db = require("./dbconnection");
-        const usuarios = db.getUsers();
-        usuarios(function (err, result) {
+    const db = require("./dbconnection");
+    const usuarios = db.getUsers();
+        usuarios(result => {
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(result);
-        });    
-    } catch (e) {
-        console.log(e);
-        res.status(500);
-    }
+        }).catch(err => {
+            console.log(err);
+            res.status(500);
+        });
 });
 
 app.post('/user', (req, res) => {
