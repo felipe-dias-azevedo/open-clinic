@@ -13,13 +13,13 @@ app.get('/', (req, res) => {
 app.get('/users', (req, res) => {
     const db = require("./dbconnection");
     const usuarios = db.getUsers();
-        usuarios(result => {
-            res.setHeader('Content-Type', 'application/json');
-            res.status(200).json(result);
-        }).catch(err => {
-            console.log(err);
-            res.status(500);
-        });
+    /*usuarios(result => {
+        res.setHeader('Content-Type', 'application/json');
+    	res.status(200).json(result);
+    });*/
+	res.setHeader('Content-Type', 'application/json');
+	console.log(usuarios);
+	res.status(200).json(null);
 });
 
 app.post('/user', (req, res) => {

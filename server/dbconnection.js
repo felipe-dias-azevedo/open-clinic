@@ -3,10 +3,10 @@ function connect() {
     const mysql = require('mysql');
 
     var con = mysql.createConnection({
-        host: "localhost",
-        user: "felipe",
+        host: "127.0.0.1",
+        user: "root",
         password: "123mysql@",
-        database: "TestingNode"
+        database: "openclinic"
     });
     
     console.log("Connected to MySQL.");
@@ -14,7 +14,7 @@ function connect() {
     return con;
 }
 
-function getUsers() {
+function getUsersBackup() {
     const conn = connect();
     var result = [];
     var result_query = (callback) => {
@@ -32,12 +32,18 @@ function getUsers() {
     return result_query;
 }
 
+function getUsers() {
+	const conn = connect();
+	var result = conn.query("SELECT * FROM users;");
+	return result;
+}
+
 function setUser(firstName, lastName) {
     const conn = connect();
     if (typeof(firstName) != 'string' && typeof(lastName) != 'string') {
         throw "Error: Names Must be String type."
     }
-    conn.query("INSERT INTO users (name, lastname) values (?, ?)", [firstName, lastName], (err, result) => {
+    conn.query("INSERT INTO users (firstname, lastname) values (?, ?)", [firstName, lastName], (err, result) => {
         if (err) throw err;
         console.log("Insert on Database. " + result.affectedRows + " records inserted.");
     });
@@ -50,7 +56,7 @@ function updateUser(new_data) {
     }
     if (new_data.first_name != undefined && new_data.last_name != undefined) {
         const data = [new_data.first_name, new_data.last_name, new_data.id]
-        conn.query("UPDATE users SET name = ?, lastname = ? WHERE id = ?", data, (err, result) => {
+        conn.query("UPDATE users SET firstname = ?, lastname = ? WHERE id = ?", data, (err, result) => {
             if (err) throw err;
             console.log("Updated record sucessfully on Database.");
         });
@@ -62,7 +68,7 @@ function updateUser(new_data) {
         });
     } else if (new_data.last_name == undefined) {
         const data = [new_data.first_name, new_data.id]
-        conn.query("UPDATE users SET name = ? WHERE id = ?", data, (err, result) => {
+        conn.query("UPDATE users SET firstname = ? WHERE id = ?", data, (err, result) => {
             if (err) throw err;
             console.log("Updated record sucessfully on Database.");
         });
