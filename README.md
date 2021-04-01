@@ -1,20 +1,16 @@
 # open-clinic
-Open Source Clinic System focused on Management of Patients
+Open Source Clinic System focused on Management of Patients and its Exams.
 
 ## Architecture
-* Node.JS       -> Server
+* ???           -> Server
 * Python GTK+   -> Linux Client
-* ???           -> Web Client
+* ReactJS       -> Web Client
 * ElectronJS    -> Windows, MacOS, Linux (Secondary) Client
+* MySQL         -> Database
 
 ## Run
 ### Server
-
-```cd server/```
-
-```npm i```
-
-```npm start```
+TBD
 
 ### GTK3+ Linux Client
 
