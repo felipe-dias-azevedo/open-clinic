@@ -1,0 +1,128 @@
+
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 36px 24px 0 24px;
+  height: 60px;
+  width: 100%;
+}
+
+.content-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 174px);
+  overflow-y: auto;
+  margin: 22px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 24px 36px 24px;
+  width: 100%;
+  height: 70px;
+}
+
+footer .left-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+footer .right-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+
+header section button,
+footer button,
+.button {
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: #fff;
+  /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
+  border: 3px solid #000;
+  border-radius: 20px;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  min-width: 30px;
+  padding: 4px 15px;
+  text-align: center;
+  white-space: nowrap;
+  outline: 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+header section button:hover,
+header section button:focus,
+footer button:hover,
+footer button:focus,
+.button:hover,
+.button:focus {
+  border-color: #c0c0c0;
+}
+
+header section button:active,
+footer button:active,
+.button:active {
+  border-color: #168bff;
+}
+
+.row {
+  margin: 12px; 
+}
+
+input[type=password] {
+  letter-spacing: 4px;
+}
+
+.title-input {
+  font-size: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 12px;
+  padding-right: 16px;
+}
+  
+.text-input {
+  letter-spacing: 1px;
+  border-radius: 8px;
+  text-align: start;
+  border: 3px black solid;
+  padding: 6px 12px;
+  margin: 8px;
+  width: 350px;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-input:hover {
+  border-color: #c0c0c0;
+}
+
+.text-input:focus {
+  border-color: #168bff;
+}
