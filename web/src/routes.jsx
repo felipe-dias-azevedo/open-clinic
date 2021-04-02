@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
 import UsersConfig from './pages/UsersConfig';
-import UsersDetail from './pages/UsersDetail';
+import UserInsert from './pages/UserInsert';
+import UserUpdate from './pages/UserUpdate';
 
 
 function Routes() {
@@ -13,7 +14,8 @@ function Routes() {
         <Route path="/" exact component={Landing} />
         <Route path="/login" component={Login} />
         <Route path="/users/config" component={UsersConfig} />
-        <Route path="/users/detail" component={UsersDetail} />
+        <Route path="/users/insert" exact component={UserInsert} />
+        <Route path="/users/update/:id" component={UserUpdate} />
       </Switch>
     </BrowserRouter>
   );

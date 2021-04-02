@@ -1,8 +1,14 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Landing() {
     return (
-        <h1>Hello World!</h1>
+        <div className="container" id="main-app">
+            <h1>Hello World!</h1>
+            <Link to="/login" className="button">
+                Login
+            </Link>
+        </div>
     );
 }
 

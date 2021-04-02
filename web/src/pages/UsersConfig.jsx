@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import UserBox from '../components/UserBox';
 
 function UsersConfig() {
-  var usersData = [
+  const usersData = [
     {id: 1, firstName: "Felipe", lastName: "Azevedo"},
     {id: 2, firstName: "Mariana", lastName: "Azevedo"},
     {id: 3, firstName: "Mayara", lastName: "Fernandes"}
   ];
 
   return (
-    <>
+    <div className="container" id="main-app">
       <header>
         <section className="header-user-left">
           <h1 className="header-text">
@@ -17,7 +18,9 @@ function UsersConfig() {
           </h1>
         </section>
         <section className="header-user-right">
-          <button className="button" id="btnRegister">Insert User</button>
+          <Link to="/users/insert" className="button">
+            Insert User
+          </Link>
         </section>
       </header>
       <div id="registered-users" className="content-user">
@@ -27,13 +30,13 @@ function UsersConfig() {
       </div>
       <footer>
         <section className="left-footer">
-          <button className="button" id="btnLogout">Log Out</button>
+          <Link to="/" className="button">
+            Log Out
+          </Link>
         </section>
-        <section className="right-footer">
-          <button className="button" id="btnRefresh">Refresh</button>
-        </section>
+        <section className="right-footer"></section>
       </footer>
-    </>
+    </div>
   );
 }
 
