@@ -1,0 +1,60 @@
+nav {
+    background: var(--bg-header-operator);
+    height: 100px;
+    border-radius: 0 0 24px 24px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav section {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-title {
+    width: 45%;
+    text-align: center;
+}
+
+.title-app {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.nav-circle {
+    background: var(--bg-dark);
+    color: var(--bg-light);
+
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+    cursor: pointer;
+}
+
+.nav-circle p {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.user-icon {
+    height: 100%;
+    width: 100%;
+}
+
+.arrow-left {
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 22px solid var(--bg-light);
+    border-radius: 2px;
+    margin-left: -4px;
+}

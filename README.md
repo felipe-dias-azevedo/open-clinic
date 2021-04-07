@@ -2,11 +2,21 @@
 Open Source Clinic System focused on Management of Patients and its Exams.
 
 ## Architecture
-* ???           -> Server
-* Python GTK+   -> Linux Client
-* ReactJS       -> Web Client
-* ElectronJS    -> Windows, MacOS, Linux (Secondary) Client
-* MySQL         -> Database
+* Java Spring Boot	-> Server
+* Python GTK+   	-> Linux Client
+* ReactJS       	-> Web Client
+* ElectronJS    	-> Windows, MacOS, Linux (Secondary) Client
+* MySQL         	-> Database
+
+## Dependencies
+
+* maven
+* python 3
+* pip
+* node
+* yarn
+* npm
+* mysql
 
 ## Run
 ### Server
@@ -21,7 +31,12 @@ TBD
 ```python3 start.py```
 
 ### Web Client
-TBD
+
+```cd web/```
+
+```yarn```
+
+```yarn start```
 
 ### ElectronJS Desktop Client (Windows, Mac, Linux)
 

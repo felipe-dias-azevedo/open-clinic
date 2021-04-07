@@ -1,15 +1,9 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import NavHeader from "../components/NavHeader";
 
-function Landing() {
+export default function AdminLogin() {
     return (
-        <div className="container" id="main-app">
-            <h1>Hello World!</h1>
-            <Link to="/login" className="button">
-                Login
-            </Link>
+        <div className="app-main">
+            <NavHeader />
         </div>
     );
 }
-
-export default Landing;

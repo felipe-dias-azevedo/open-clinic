@@ -1,26 +1,16 @@
-import React from 'react';
+import '../styles/inputLabel.css';
 
-function InputLabel({label, isPassword, ...rest}) {
+export default function InputLabel({label, isDark}) {
     return (
-        <div className="row">
+        <div className="input-label">
             <section>
-                <div className="title-input">
-                    <h3 className="input-heading">
-                        {label}:
-                    </h3>
-                    <p>
-                        
-                    </p>
-                </div>
-                <input 
-                    type={isPassword ? "password" : "text"}
-                    className="form-control text-input"
-                    placeholder=""
-                    {...rest}
-                />
+                <h3>{label}:</h3>
             </section>
+            <input
+                type="text"
+                className={isDark ? "dark-input" : "light-input"}
+                placeholder={`Type your ${label}`}
+            />
         </div>
     );
 }
-
-export default InputLabel;

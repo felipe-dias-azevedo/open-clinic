@@ -1,21 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
-import Login from './pages/Login';
-import UsersConfig from './pages/UsersConfig';
-import UserInsert from './pages/UserInsert';
-import UserUpdate from './pages/UserUpdate';
-
+import AdminLogin from './pages/AdminLogin';
 
 function Routes() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Landing} />
-        <Route path="/login" component={Login} />
-        <Route path="/users/config" component={UsersConfig} />
-        <Route path="/users/insert" exact component={UserInsert} />
-        <Route path="/users/update/:id" component={UserUpdate} />
+        <Route path="/admin/login" component={AdminLogin} />
       </Switch>
     </BrowserRouter>
   );
