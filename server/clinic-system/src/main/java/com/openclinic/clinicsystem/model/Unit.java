@@ -12,6 +12,9 @@ public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUnit;
+    @NotBlank
+    @Size(min = 3, max = 255)
+    private String nameUnit;
     @DecimalMin("-90")
     @DecimalMax("90")
     @NotNull
@@ -22,13 +25,20 @@ public class Unit {
     private Double unitLong;
 
 
-
     public Integer getIdUnit() {
         return idUnit;
     }
 
     public void setIdUnit(Integer idUnit) {
         this.idUnit = idUnit;
+    }
+
+    public String getNameUnit() {
+        return nameUnit;
+    }
+
+    public void setNameUnit(String nameUnit) {
+        this.nameUnit = nameUnit;
     }
 
     public Double getUnitLat() {
