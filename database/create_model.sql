@@ -14,15 +14,15 @@ CREATE TABLE user (
 CREATE TABLE exam (
     id_exam INT PRIMARY KEY AUTO_INCREMENT,
     fk_user INT,
-    desc_exam VARCHAR(64),
+    desc_exam VARCHAR(255),
     doc_exam VARCHAR(255),
     fk_unit INT,
     payment DOUBLE(5,2),
-    schedule_exam DATETIME,
-    when_scheduled_exam DATETIME,
+    create_date DATETIME,
+    schedule_date DATETIME,
     status INT,
-    foreign key (fk_user) references user (id_user),
-    foreign key (fk_unit) references unit (id_unit)
+    FOREIGN KEY (fk_user) REFERENCES user (id_user),
+    FOREIGN KEY (fk_unit) REFERENCES unit (id_unit)
 );
 
 CREATE TABLE unit (
@@ -34,6 +34,8 @@ CREATE TABLE unit (
 
 CREATE TABLE operator (
     id_operator INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(100),
-    password VARCHAR(100)
+    username_op VARCHAR(100),
+    password_op VARCHAR(100),
+    fk_unit INT,
+    FOREIGN KEY (fk_unit) REFERENCES unit (id_unit)
 )

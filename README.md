@@ -20,7 +20,10 @@ Open Source Clinic System focused on Management of Patients and its Exams.
 
 ## Run
 ### Server
-TBD
+
+``` cd server/clinic-system/ ```
+
+``` mvn spring-boot:run ```
 
 ### GTK3+ Linux Client
 

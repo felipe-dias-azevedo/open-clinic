@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="10VQh2AGU3J8wgfqxGsb" name="Page-1">
-        <mxGraphModel dx="602" dy="421" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="657" dy="581" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -19,14 +19,14 @@
                 <mxCell id="epVFGqGXGD9gSz-YeE3E-3" value="Unit" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="480" y="180" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="epVFGqGXGD9gSz-YeE3E-4" value="idUser&#10;name&#10;email&#10;cellphone&#10;birth&#10;gender&#10;password&#10;addressLat&#10;addressLon&#10;insurance" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
-                    <mxGeometry x="80" y="250" width="120" height="200" as="geometry"/>
+                <mxCell id="epVFGqGXGD9gSz-YeE3E-4" value="id_user &lt;int&gt;&#10;name &lt;varchar&gt;&#10;email &lt;varchar&gt;&#10;cellphone &lt;varchar&gt;&#10;birth &lt;date&gt;&#10;gender &lt;int&gt;&#10;password &lt;varchar&gt;&#10;address_lat &lt;double&gt;&#10;address_lon &lt;double&gt;&#10;insurance &lt;boolean&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="250" width="134" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="epVFGqGXGD9gSz-YeE3E-5" value="idExam&#10;fkUser&#10;descExam&#10;docExam&#10;fkUnit&#10;payment&#10;scheduleExam&#10;whenScheduledExam&#10;status" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
-                    <mxGeometry x="280" y="250" width="120" height="146" as="geometry"/>
+                <mxCell id="epVFGqGXGD9gSz-YeE3E-5" value="id_exam &lt;int&gt;&#10;fk_user &lt;int&gt;&#10;desc_exam &lt;varchar&gt;&#10;doc_exam &lt;varchar&gt;&#10;fk_unit &lt;int&gt;&#10;payment &lt;double&gt;&#10;create_date &lt;datetime&gt;&#10;schedule_date &lt;datetime&gt;&#10;status &lt;int&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="250" width="204" height="146" as="geometry"/>
                 </mxCell>
-                <mxCell id="epVFGqGXGD9gSz-YeE3E-6" value="idUnit&#10;unitLat&#10;unitLong" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
-                    <mxGeometry x="480" y="250" width="120" height="90" as="geometry"/>
+                <mxCell id="epVFGqGXGD9gSz-YeE3E-6" value="id_unit &lt;int&gt;&#10;name_unit &lt;varchar&gt;&#10;unit_lat &lt;double&gt;&#10;unit_long &lt;double&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="250" width="131" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="epVFGqGXGD9gSz-YeE3E-9" value="(1,1)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
                     <mxGeometry x="200" y="180" width="40" height="20" as="geometry"/>
@@ -55,8 +55,8 @@
                 <mxCell id="6" value="(1,N)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
                     <mxGeometry x="468" y="105" width="37" height="17" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="idOperator&#10;usernameOp&#10;passwordOp&#10;fkUnit" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
-                    <mxGeometry x="530" y="39" width="120" height="90" as="geometry"/>
+                <mxCell id="7" value="id_operator &lt;int&gt;&#10;username_op &lt;varchar&gt;&#10;password_op &lt;varchar&gt;&#10;fk_unit &lt;int&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="39" width="149" height="90" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

@@ -5,6 +5,7 @@ import com.openclinic.clinicsystem.view.OperatorRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/operators")
@@ -18,8 +19,8 @@ public class OperatorController {
         return ResponseEntity.status(200).body(repository.findAll());
     }
 
-    @PostMapping
-    public ResponseEntity showOperator(@RequestBody OperatorRequest newOperator) {
+    @GetMapping("/login")
+    public ResponseEntity showOperator(@RequestBody @Valid OperatorRequest newOperator) {
         if (repository.existsByUsernameAndPassword(newOperator.getUsername(), newOperator.getPassword())) {
             return ResponseEntity.status(200).body(
                     repository.findByUsername(newOperator.getUsername()));
