@@ -1,10 +1,8 @@
 package com.openclinic.clinicsystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -12,13 +10,20 @@ public class Operator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_operator")
     private Integer idOperator;
     @Size(min = 3, max = 100)
     @NotBlank
-    private String username;
+    @Column(name="username_op")
+    private String usernameOp;
     @Size(min = 5, max = 100)
     @NotBlank
-    private String password;
+    @Column(name="password_op")
+    private String passwordOp;
+    @ManyToOne
+    @JoinColumn(name = "fk_unit")
+    @NotNull
+    private Unit fkUnit;
 
 
     public Integer getIdOperator() {
@@ -29,19 +34,27 @@ public class Operator {
         this.idOperator = idOperator;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUsernameOp() {
+        return usernameOp;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsernameOp(String usernameOp) {
+        this.usernameOp = usernameOp;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswordOp() {
+        return passwordOp;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswordOp(String passwordOp) {
+        this.passwordOp = passwordOp;
+    }
+
+    public Unit getFkUnit() {
+        return fkUnit;
+    }
+
+    public void setFkUnit(Unit fkUnit) {
+        this.fkUnit = fkUnit;
     }
 }

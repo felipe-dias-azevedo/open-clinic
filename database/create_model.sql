@@ -7,7 +7,7 @@ CREATE TABLE user (
     gender INT,
     password VARCHAR(255),
     address_lat DOUBLE(9,7),
-    address_lon DOUBLE(9,7),
+    address_lon DOUBLE(10,7),
     insurance BOOLEAN
 );
 
@@ -29,7 +29,7 @@ CREATE TABLE unit (
     id_unit INT PRIMARY KEY AUTO_INCREMENT,
     name_unit VARCHAR(255),
     unit_lat DOUBLE(9,7),
-    unit_lon DOUBLE(9,7)
+    unit_lon DOUBLE(10,7)
 );
 
 CREATE TABLE operator (
@@ -38,4 +38,4 @@ CREATE TABLE operator (
     password_op VARCHAR(100),
     fk_unit INT,
     FOREIGN KEY (fk_unit) REFERENCES unit (id_unit)
-)
+);

@@ -12,33 +12,43 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_user")
     private Integer idUser;
     @NotBlank
     @Size(min = 3, max = 100)
+    @Column(name="name")
     private String name;
     @NotBlank
     @Email
+    @Column(name="email")
     private String email;
     @NotBlank
+    @Column(name="cellphone")
     private String cellphone;
     @Past
     @NotNull
+    @Column(name="birth")
     private LocalDate birth;
     @Enumerated(EnumType.ORDINAL)
     @NotNull
+    @Column(name="gender")
     private Gender gender;
     @NotBlank
     @Size(min = 5, max = 100)
+    @Column(name="password")
     private String password;
     @DecimalMin("-90")
     @DecimalMax("90")
     @NotNull
+    @Column(name="address_lat")
     private Double addressLat;
     @DecimalMin("-180")
     @DecimalMax("180")
     @NotNull
+    @Column(name="address_lon")
     private Double addressLon;
     @NotNull
+    @Column(name="insurance")
     private Boolean insurance;
 
 

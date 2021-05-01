@@ -1,9 +1,6 @@
 package com.openclinic.clinicsystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
@@ -11,18 +8,22 @@ public class Unit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_unit")
     private Integer idUnit;
     @NotBlank
     @Size(min = 3, max = 255)
+    @Column(name="name_unit")
     private String nameUnit;
     @DecimalMin("-90")
     @DecimalMax("90")
     @NotNull
+    @Column(name="unit_lat")
     private Double unitLat;
     @DecimalMin("-180")
     @DecimalMax("180")
     @NotNull
-    private Double unitLong;
+    @Column(name="unit_lon")
+    private Double unitLon;
 
 
     public Integer getIdUnit() {
@@ -49,11 +50,11 @@ public class Unit {
         this.unitLat = unitLat;
     }
 
-    public Double getUnitLong() {
-        return unitLong;
+    public Double getUnitLon() {
+        return unitLon;
     }
 
-    public void setUnitLong(Double unitLong) {
-        this.unitLong = unitLong;
+    public void setUnitLon(Double unitLon) {
+        this.unitLon = unitLon;
     }
 }

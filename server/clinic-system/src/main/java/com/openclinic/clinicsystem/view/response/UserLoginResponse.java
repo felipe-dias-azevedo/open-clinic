@@ -1,4 +1,4 @@
-package com.openclinic.clinicsystem.view;
+package com.openclinic.clinicsystem.view.response;
 
 import com.openclinic.clinicsystem.model.User;
 

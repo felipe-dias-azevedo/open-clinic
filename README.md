@@ -2,11 +2,11 @@
 Open Source Clinic System focused on Management of Patients and its Exams.
 
 ## Architecture
-* Java Spring Boot	-> Server
-* Python GTK+   	-> Linux Client
-* ReactJS       	-> Web Client
-* ElectronJS    	-> Windows, MacOS, Linux (Secondary) Client
-* MySQL         	-> Database
+* Java Spring Boot -> Server
+* Python GTK+ -> Linux Client
+* ReactJS -> Web Client
+* ElectronJS -> Windows, MacOS, Linux (Secondary) Client
+* MySQL -> Database
 
 ## Dependencies
 
@@ -17,6 +17,12 @@ Open Source Clinic System focused on Management of Patients and its Exams.
 * yarn
 * npm
 * mysql
+
+## Install 
+
+### Linux Ubuntu
+
+``` sudo apt install maven python3-dev python3-pip nodejs yarn npm mysql-server ```
 
 ## Run
 ### Server
@@ -50,7 +56,9 @@ Open Source Clinic System focused on Management of Patients and its Exams.
 ```npm start```
 
 ## Examples
-TBD
+
+### Web Front-End Design
+https://www.figma.com/file/0qhiGniZ2AzvXhFRSRImxU/Design-OpenClinic?node-id=0%3A1
 
 ## License
 #### MIT
