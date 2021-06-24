@@ -32,6 +32,15 @@ CREATE TABLE unit (
     unit_lon DOUBLE(10,7)
 );
 
+CREATE TABLE opening_hours (
+    id_openhours INT PRIMARY KEY AUTO_INCREMENT,
+    fk_unit INT,
+    day_name VARCHAR(255),
+    open_hour TIME,
+    close_hour TIME,
+    FOREIGN KEY (fk_unit) REFERENCES unit (id_unit)
+);
+
 CREATE TABLE operator (
     id_operator INT PRIMARY KEY AUTO_INCREMENT,
     username_op VARCHAR(100),
