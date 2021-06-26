@@ -6,7 +6,7 @@ from gi.repository import Gtk, GLib
 
 class WindowOne(Gtk.Window):
     def __init__(self):
-        Gtk.Window.__init__(self, title="Account Log In")
+        Gtk.Window.__init__(self, title="Operator Login")
         self.set_size_request(360, 260)
         self.set_default_size(480, 360)
         self.set_border_width(16)
