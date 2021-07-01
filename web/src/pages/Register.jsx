@@ -1,20 +1,16 @@
 import NavHeader from '../components/NavHeader';
 import TitleBody from '../components/TitleBody';
-import InputLabel from '../components/InputLabel';
-import InputLabelPassword from '../components/InputLabelPassword';
 import Button from '../components/Button';
 import '../styles/defaultFill.css';
 
-export default function AdminLogin() {
+export default function Register() {
     return (
         <div className="app-main">
             <NavHeader />
-            <TitleBody label="Operator Login" />
+            <TitleBody label="Register" />
             <section>
-                <InputLabel label="Username" isDark={true} />
-                <InputLabelPassword isDark={true} />
                 <div className="bottom-button">
-                    <Button label="Confirm" isDark={true} />
+                    <Button label="Confirm" isDark />
                 </div>
             </section>
         </div>

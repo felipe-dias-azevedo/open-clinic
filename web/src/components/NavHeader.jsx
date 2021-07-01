@@ -23,7 +23,7 @@ export default function NavHeader() {
                 </h1>
             </div>
             <section>
-                <Link to="/admin/login" className="nav-circle">
+                <Link to="/login" className="nav-circle">
                     <Icon className="user-icon" icon={bxUser} />
                     <p>Login</p>
                 </Link>
